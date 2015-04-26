@@ -1,0 +1,27 @@
+/assign(truck t) {
+	if no more parcel then go back
+	loop over parcels, add each parcels’ scoring into a max-heap [getScore]
+	while not assigned {
+		poll 
+		if not in assigned mapping then assign
+		else (already assigned) then compare the already assigned score with the newly get one, if the new one is better then assign and reassign the old one
+	}
+}
+
+getTruckTakeParcelScore(truck t, parcel p) {
+	return cost of distance from t to p plus getToDestinationScore( t,  p)
+}
+
+getToDestinationScore(truck t, parcel p) {
+	if same color then m=multiplier else m=1
+	get length from p to destination and calculate cost c
+	if p held by another then ec=drop off+pick up 
+	else if p held by t then ec=0
+	else ec = pickup
+	return payof*m-ec-c-dropoff
+}
+
+reAssign(truck) {
+	if truck loaded then drop off
+	assign(truck)
+}
