@@ -25,3 +25,38 @@ reAssign(truck) {
 	if truck loaded then drop off
 	assign(truck)
 }
+
+New Design:
+
+class WorkQueue:
+	queue linkedlist of parcels
+	dist distance of traveling from depot through all parcels then back to depot
+	c color of the truck
+	current the parcel currently being delivered
+
+	addOptimal(Parcel) //add parcel to its optimal position in the queue
+
+queue forming(list wq, parcel ps){
+while ps not empty: iterate over ps: optimalInsertionscore get optimal push p in
+}
+
+int optimalInsertionScore(list of wq, p) {
+	list of wq.dist; score = int.minvalue
+	o = (max(wq.dist)*wq.size()-sum(wq.dist))*waiting cost + sum(wq.dist)*runningcost
+	for wqe in wq: 
+wq.dist +=wqe.distdiff(p); 
+n = (above) 
+score = colorbonus - n-o  
+if score > score then use new
+	return score
+}
+
+//p^2 approximately for evaluating score of a sequence 
+
+wqe optimalInsertion(list of wq, p) {
+	list of wq.dist; score = minvalue; WorkQueue wqr
+	o = (max(wq.dist)*wq.size()-sum(wq.dist))*waiting cost + sum(wq.dist)*runningcost
+	for wqe in wq: wq.dist +=wqe.distdiff(p); n = (above) score = colorbonus - n-o  if score > score then use new also wqr = wqe
+}
+
+sum(arraylist) {}    max(arraylist){}
